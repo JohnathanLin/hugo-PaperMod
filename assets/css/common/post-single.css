@@ -421,14 +421,15 @@ div.friend-link {
     vertical-align: top;
     padding: 10px 10px;
     margin-bottom: 5px;
-    background: var(--entry);
+    /* background: var(--entry); */
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    position: relative;
 }
-div.friend-link:active {
+/* div.friend-link:active {
     transform: scale(.96);
     transition: transform .1s;
-}
+} */
 div.friend-link div.friend-link-avatar {
     width: 64px;
     height: 64px;
@@ -451,6 +452,32 @@ div.friend-link div.friend-link-bio {
     font-size: 16px;
     line-height: 32px;
     overflow: hidden;
+}
+
+div.friend-link a.friend-link-button {
+    background: var(--entry);
+    border-radius: var(--radius);
+    width: 40px;
+    /* padding: 3px; */
+    box-shadow: 0 0;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    text-align: center;
+    border: 1px solid var(--border)
+}
+
+div.friend-link a.friend-link-button-2 {
+    background: var(--entry);
+    border-radius: var(--radius);
+    width: 40px;
+    /* padding: 3px; */
+    box-shadow: 0 0;
+    position: absolute;
+    top: 46px;
+    right: 10px;
+    text-align: center;
+    border: 1px solid var(--border)
 }
 
 .no-comment-but {
