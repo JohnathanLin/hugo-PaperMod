@@ -1,5 +1,5 @@
 <script>
-    
+  
 $( document ).ready(function() {
   var cacheFriendsData = getItem("windypath-friend");
   if (cacheFriendsData !== null) {
@@ -61,8 +61,7 @@ function getItem(key) {
 function showFriends(data) {
   var dataObj = JSON.parse(data)
   Object.keys(dataObj['data']).forEach(element => {
-    // console.log(element, dataObj['data'][element])
-    $("div.post-content").append(' \
+    var html = ' \
       <div class="friend-link"> \
         <div class="friend-link-avatar"> \
           <img src="' + dataObj['data'][element]['avatarUrl'] + '"/> \
@@ -72,9 +71,13 @@ function showFriends(data) {
           <div class="friend-link-bio">' + dataObj['data'][element]['bioHTML'] + '</div> \
         </div>\
         <a class="friend-link-button" href="https://github.com/'+ dataObj['data'][element]['login']+'" target="_blank""><i class="fa-brands fa-github"></i></a>\
-        <a class="friend-link-button-2" href="' + dataObj['data'][element]['websiteUrl'] +'" target="_blank"><i class="fa-regular fa-file"></i></i></a>\
-      </div>'
-    )
+    '
+    if (dataObj['data'][element]['websiteUrl'] != null) { //有个人主页则显示主页链接
+      html += '<a class="friend-link-button-2" href="' + dataObj['data'][element]['websiteUrl'] +'" target="_blank"><i class="fa-regular fa-file"></i></i></a></div>'
+    } else { //无个人主页则禁止访问
+      html += '<a class="friend-link-button-2 friend-link-disabled"><i class="fa-regular fa-file"></i></i></a></div>'
+    }
+    $("div.post-content").append(html)
   });
 }
 
@@ -93,4 +96,4 @@ function showFriends(data) {
     </div>
   </a>
 </div>
- -->
+  -->

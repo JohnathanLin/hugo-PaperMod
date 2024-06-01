@@ -480,6 +480,11 @@ div.friend-link a.friend-link-button-2 {
     border: 1px solid var(--border)
 }
 
+div.friend-link a.friend-link-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .no-comment-but {
     font-size: 14px;
 }
